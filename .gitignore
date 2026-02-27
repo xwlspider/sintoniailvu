@@ -2,6 +2,9 @@
 
 # dependencies
 node_modules/
+.env
+google-services.json
+service-account.json
 
 # Expo
 .expo/
