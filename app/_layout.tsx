@@ -2,6 +2,7 @@ import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { createContext, useContext, useState } from "react";
 import { UserProfile } from "../data/constants";
+import React from "react";
 
 interface AuthContextType {
   user: UserProfile | null;

@@ -1,5 +1,7 @@
 import { Tabs } from "expo-router";
 import { View, Text, StyleSheet, Platform } from "react-native";
+import React from "react";
+
 
 function TabIcon({ emoji, label, focused }: { emoji: string; label: string; focused: boolean }) {
   return (

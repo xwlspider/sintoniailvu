@@ -1,5 +1,7 @@
 import { View, Text, ScrollView, StyleSheet, Platform } from "react-native";
 import { useAuth } from "../_layout";
+import React from "react";
+
 
 export default function HomeScreen() {
   const { user } = useAuth();

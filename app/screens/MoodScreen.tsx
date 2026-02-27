@@ -6,6 +6,8 @@ import {
 import { useAuth } from "../_layout";
 import { MOODS, MoodType, JSONBIN_CONFIG } from "../../data/constants";
 import { MoodService } from "../../service/service";
+import React from "react";
+
 
 const POLL_INTERVAL = 15000;
 

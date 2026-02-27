@@ -6,6 +6,7 @@ import { useRef, useState } from "react";
 import { router } from "expo-router";
 import { USERS } from "../data/constants";
 import { useAuth } from "./_layout";
+import React from "react";
 
 export default function LoginScreen() {
   const { setUser } = useAuth();

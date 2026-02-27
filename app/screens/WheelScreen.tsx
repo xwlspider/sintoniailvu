@@ -5,6 +5,8 @@ import {
 } from "react-native";
 import { DATE_IDEAS, DateIdea } from "../../data/dateIdeas";
 import { CATEGORIA_COLORS, WHEEL_COLORS } from "../../data/constants";
+import React from "react";
+
 
 const WHEEL_SIZE  = 280;
 const SLICE_COUNT = DATE_IDEAS.length;
