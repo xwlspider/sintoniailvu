@@ -1,24 +1,36 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
+import { createContext, useContext, useState } from "react";
+import { UserProfile } from "../data/constants";
 
-import { useColorScheme } from '@/hooks/use-color-scheme';
+interface AuthContextType {
+  user: UserProfile | null;
+  setUser: (u: UserProfile | null) => void;
+}
 
-export const unstable_settings = {
-  anchor: '(tabs)',
-};
+export const AuthContext = createContext<AuthContextType>({
+  user: null,
+  setUser: () => {},
+});
+
+export const useAuth = () => useContext(AuthContext);
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
+  const [user, setUser] = useState<UserProfile | null>(null);
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
+    <AuthContext.Provider value={{ user, setUser }}>
+      <StatusBar style="light" />
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          contentStyle: { backgroundColor: "#0D0A0E" },
+          animation: "fade",
+        }}
+      >
+        <Stack.Screen name="index" />
+        <Stack.Screen name="screens" />
       </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    </AuthContext.Provider>
   );
 }
