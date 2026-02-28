@@ -7,7 +7,7 @@
     "icon": "./assets/images/IconImage.png",
     "scheme": "sintoniailvu",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "newArchEnabled": false,
     "ios": {
       "supportsTablet": true
     },
